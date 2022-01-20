@@ -17,6 +17,9 @@ struct HomeView: View {
         ColorGrid(hexValue: "4460EE", color: Color("Blue")),
     ]
     
+    // MARK: Animation Properties
+    @State var animations: [Bool] = Array(repeating: false, count: 10)
+    
     var body: some View {
         VStack {
             TopRow()
@@ -24,15 +27,37 @@ struct HomeView: View {
             CreditCard()
             
             HStack {
+                Text("Choose a color")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .hLeading()
                 
+                Button {
+                    
+                } label: {
+                    Text("View all")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("Pink"))
+                        .underline()
+                }
             }
+            .padding()
             
             Color.black
+                .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 40))
+                .padding(.top)
         }
         .vTop()
         .hCenter()
+        .ignoresSafeArea(.container, edges: .bottom)
         .background(Color("background"))
         .preferredColorScheme(.dark)
+        .onAppear(perform: animateScreen)
+    }
+    
+    func animateScreen() {
+        
     }
     
     // MARK: Animated Credit Card
@@ -116,6 +141,7 @@ struct TopRow: View {
                     .clipShape(Circle())
             }
         }
-        .padding()
+        .padding([.horizontal, .top])
+        .padding(.bottom, 5)
     }
 }

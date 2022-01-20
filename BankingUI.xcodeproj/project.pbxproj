@@ -15,6 +15,7 @@
 		9159BBB82799FAE7004E096C /* ColorGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBB72799FAE7004E096C /* ColorGrid.swift */; };
 		9159BBBB2799FCF4004E096C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBBA2799FCF4004E096C /* Extensions.swift */; };
 		9159BBBE279A03AF004E096C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBBD279A03AF004E096C /* CardView.swift */; };
+		9159BBC0279A04F7004E096C /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBBF279A04F7004E096C /* CustomCorner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		9159BBB72799FAE7004E096C /* ColorGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrid.swift; sourceTree = "<group>"; };
 		9159BBBA2799FCF4004E096C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9159BBBD279A03AF004E096C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9159BBBF279A04F7004E096C /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				9159BBBA2799FCF4004E096C /* Extensions.swift */,
+				9159BBBF279A04F7004E096C /* CustomCorner.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				9159BBB62799FAB9004E096C /* HomeView.swift in Sources */,
 				9159BBA72799F77E004E096C /* ContentView.swift in Sources */,
 				9159BBA52799F77E004E096C /* BankingUIApp.swift in Sources */,
+				9159BBC0279A04F7004E096C /* CustomCorner.swift in Sources */,
 				9159BBBE279A03AF004E096C /* CardView.swift in Sources */,
 				9159BBB82799FAE7004E096C /* ColorGrid.swift in Sources */,
 			);
