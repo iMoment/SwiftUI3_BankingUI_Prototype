@@ -20,6 +20,14 @@ struct HomeView: View {
     var body: some View {
         VStack {
             TopRow()
+            
+            CreditCard()
+            
+            HStack {
+                
+            }
+            
+            Color.black
         }
         .vTop()
         .hCenter()
@@ -28,6 +36,56 @@ struct HomeView: View {
     }
     
     // MARK: Animated Credit Card
+    @ViewBuilder
+    func CreditCard() -> some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color("Pink"))
+            
+            VStack {
+                HStack {
+                    ForEach(1...4, id: \.self) { _ in
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 6, height: 6)
+                    }
+                    
+                    Text("3764")
+                        .font(.callout)
+                        .fontWeight(.semibold)
+                }
+                .hLeading()
+                
+                HStack(spacing: -12) {
+                    Text("Homer Simpson")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .hLeading()
+                    
+                    Circle()
+                        .stroke(Color.white, lineWidth: 1)
+                        .frame(width: 30, height: 30)
+                    
+                    Circle()
+                        .stroke(Color.white, lineWidth: 1)
+                        .frame(width: 30, height: 30)
+                }
+                .vBottom()
+            }
+            .padding(.vertical, 20)
+            .padding(.horizontal)
+            .vTop()
+            .hLeading()
+            
+            // MARK: Top Ring
+            Circle()
+                .stroke(Color.white.opacity(0.5), lineWidth: 18)
+                .offset(x: 130, y: -120)
+        }
+        .clipped()
+        .frame(height: 250)
+        .padding()
+    }
 }
 
 struct HomeView_Previews: PreviewProvider {
