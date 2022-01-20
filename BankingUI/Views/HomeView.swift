@@ -24,7 +24,16 @@ struct HomeView: View {
         VStack {
             TopRow()
             
-            CreditCard()
+            
+            GeometryReader { proxy in
+                let maxY = proxy.frame(in: .global).maxY
+                
+                CreditCard()
+                    .rotation3DEffect(.init(degrees: animations[0] ? 0 : -270), axis: (x: 1, y: 0, z: 0), anchor: .center)
+                    .offset(y: animations[0] ? 0 : -maxY)
+                    
+            }
+            .frame(height: 250)
             
             HStack {
                 Text("Choose a color")
@@ -57,7 +66,9 @@ struct HomeView: View {
     }
     
     func animateScreen() {
-        
+        withAnimation(.interactiveSpring(response: 1.3, dampingFraction: 0.7, blendDuration: 0.7)) {
+            animations[0] = true
+        }
     }
     
     // MARK: Animated Credit Card
@@ -108,7 +119,6 @@ struct HomeView: View {
                 .offset(x: 130, y: -120)
         }
         .clipped()
-        .frame(height: 250)
         .padding()
     }
 }
