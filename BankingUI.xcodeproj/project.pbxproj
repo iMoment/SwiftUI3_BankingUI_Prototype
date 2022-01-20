@@ -11,6 +11,8 @@
 		9159BBA72799F77E004E096C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBA62799F77E004E096C /* ContentView.swift */; };
 		9159BBA92799F77F004E096C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9159BBA82799F77F004E096C /* Assets.xcassets */; };
 		9159BBAC2799F77F004E096C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9159BBAB2799F77F004E096C /* Preview Assets.xcassets */; };
+		9159BBB62799FAB9004E096C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBB52799FAB9004E096C /* HomeView.swift */; };
+		9159BBB82799FAE7004E096C /* ColorGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBB72799FAE7004E096C /* ColorGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		9159BBA62799F77E004E096C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9159BBA82799F77F004E096C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9159BBAB2799F77F004E096C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9159BBB52799FAB9004E096C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9159BBB72799FAE7004E096C /* ColorGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,9 @@
 			children = (
 				9159BBA42799F77E004E096C /* BankingUIApp.swift */,
 				9159BBA62799F77E004E096C /* ContentView.swift */,
+				9159BBB42799FAA6004E096C /* ViewModel */,
+				9159BBB32799FA9B004E096C /* Model */,
+				9159BBB22799FA8F004E096C /* Views */,
 				9159BBA82799F77F004E096C /* Assets.xcassets */,
 				9159BBAA2799F77F004E096C /* Preview Content */,
 			);
@@ -65,6 +72,29 @@
 				9159BBAB2799F77F004E096C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9159BBB22799FA8F004E096C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9159BBB52799FAB9004E096C /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9159BBB32799FA9B004E096C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9159BBB72799FAE7004E096C /* ColorGrid.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9159BBB42799FAA6004E096C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +167,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9159BBB62799FAB9004E096C /* HomeView.swift in Sources */,
 				9159BBA72799F77E004E096C /* ContentView.swift in Sources */,
 				9159BBA52799F77E004E096C /* BankingUIApp.swift in Sources */,
+				9159BBB82799FAE7004E096C /* ColorGrid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
