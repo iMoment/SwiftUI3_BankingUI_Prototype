@@ -40,6 +40,7 @@ struct HomeView: View {
                     .font(.title3)
                     .fontWeight(.semibold)
                     .hLeading()
+                    .offset(x: animations[1] ? 0 : -200)
                 
                 Button {
                     
@@ -50,12 +51,40 @@ struct HomeView: View {
                         .foregroundColor(Color("Pink"))
                         .underline()
                 }
+                .offset(x: animations[1] ? 0 : 200)
             }
             .padding()
             
-            Color.black
-                .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 40))
-                .padding(.top)
+            GeometryReader { proxy in
+                let size = proxy.size
+                ZStack {
+                    Color.black
+                        .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 40))
+                        .frame(height: animations[2] ? nil : 0)
+                        .vBottom()
+                    
+                    ZStack {
+                        // MARK: Initial Grid View
+                        ForEach(colors) { colorGrid in
+                            
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(colorGrid.color)
+                                .frame(width: 150, height: animations[3] ? 60 : 150)
+                        }
+                    }
+                    // MARK: Opacity w/ Scale Animation
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color("background"))
+                            .frame(width: 150, height: animations[3] ? 60 : 150)
+                            .opacity(animations[3] ? 0 : 1)
+                    )
+                    .scaleEffect(animations[3] ? 1 : 2.3)
+                }
+                .hCenter()
+                .vCenter()
+            }
+            .padding(.top)
         }
         .vTop()
         .hCenter()
@@ -66,10 +95,26 @@ struct HomeView: View {
     }
     
     func animateScreen() {
-        withAnimation(.interactiveSpring(response: 1.3, dampingFraction: 0.7, blendDuration: 0.7)) {
+        // Flipping card
+        withAnimation(.interactiveSpring(response: 1.3, dampingFraction: 0.7, blendDuration: 0.7).delay(0.2)) {
             animations[0] = true
         }
+        
+        // Side text
+        withAnimation(.easeInOut(duration: 0.7)) {
+            animations[1] = true
+        }
+        
+        // Bottom container slide up
+        withAnimation(.interactiveSpring(response: 1.3, dampingFraction: 0.7, blendDuration: 0.7).delay(0.2)) {
+            animations[2] = true
+        }
+        
+        withAnimation(.easeInOut(duration: 0.8)) {
+            animations[3] = true
+        }
     }
+    
     
     // MARK: Animated Credit Card
     @ViewBuilder
